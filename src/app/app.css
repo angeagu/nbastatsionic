@@ -1,0 +1,18 @@
+.toolbar-background {
+  background-color: red; }
+
+.toolbar-title {
+  color: white; }
+
+.bar-button {
+  color: white; }
+
+.prev-next-buttons {
+  color: white;
+  float: right; }
+
+.navigationButton {
+  padding-left: 10px;
+  font-weight: bold; }
+
+/*# sourceMappingURL=app.css.map */

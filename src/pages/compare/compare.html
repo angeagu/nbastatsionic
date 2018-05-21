@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Compare</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="compareView">
+  <form [formGroup]="compareForm" (ngSubmit)="compare(compareForm.value)">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="compareRowHeader">Player #1</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-select [formControl]="team1">
+              <ion-option *ngFor="let team of teamList; let idx = index" [value]="team.id" selected="{{idx == 0}}">{{team.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-select [formControl]="player1">
+              <ion-option *ngFor="let player of playerList1; let idx = index" [value]="player.personal.ID" selected="{{idx == 0}}">
+                {{player.personal.FirstName}} {{player.personal.LastName}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isReady && (!team1.valid || !player1.valid)">
+        <ion-col col-6>
+          <ion-item *ngIf="!team1.valid" class="errorItem">
+            Please, select a Team.
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item *ngIf="!player1.valid" class="errorItem">
+            Please, select a Player.
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="compareRowHeader">Player #2</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-select [formControl]="team2">
+              <ion-option *ngFor="let team of teamList; let idx = index" [value]="team.id" selected="{{idx == 0}}">{{team.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-select [formControl]="player2">
+              <ion-option *ngFor="let player of playerList2; let idx = index" [value]="player.personal.ID" selected="{{idx == 0}}">
+                {{player.personal.FirstName}} {{player.personal.LastName}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="isReady && (!team2.valid || !player2.valid)">
+        <ion-col col-6>
+          <ion-item *ngIf="!team2.valid" class="errorItem">
+            Please, select a Team.
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item *ngIf="!player2.valid" class="errorItem">
+            Please, select a Player.
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 class="compareRowButton">
+          <button ion-button round type="submit"class="compareButton" [disabled]="!compareForm.valid">Compare</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+

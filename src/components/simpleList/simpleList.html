@@ -1,0 +1,14 @@
+<div>
+  <ion-list>
+    <button ion-item *ngFor="let item of simpleList; let idx = index" (click)="itemClicked(idx)">
+      <!--<ion-icon [name]="item.icon" item-start></ion-icon>-->
+      <span *ngIf="!showValue">
+        {{item}}
+      </span>
+      <span *ngIf="showValue">{{item.label}}</span>
+      <div class="item-note" item-end *ngIf="showValue">
+        {{item.value}}
+      </div>
+    </button>
+  </ion-list>
+</div>

@@ -1,0 +1,11 @@
+.playerDetail .category {
+  padding-right: 10px;
+  text-align: right; }
+.playerDetail .value {
+  padding-left: 10px;
+  text-align: left; }
+.playerDetail .player-avatar {
+  height: 40px;
+  width: 53px; }
+
+/*# sourceMappingURL=playerDetail.css.map */

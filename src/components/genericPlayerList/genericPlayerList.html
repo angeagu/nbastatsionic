@@ -1,0 +1,21 @@
+<div *ngIf="grouped">
+  <ion-searchbar (ionInput)="searchPlayers($event)"></ion-searchbar>
+  <ion-item-group *ngFor="let key of objectKeys(sortedPlayerMap)">
+    <ion-item-divider color="light">{{key.toUpperCase()}}</ion-item-divider>
+    <ion-item *ngFor="let player of sortedPlayerMap[key]" (click)="openPlayerDetail(player)">
+      {{player.personal.FirstName}}&nbsp;{{player.personal.LastName}}
+    </ion-item>
+  </ion-item-group>
+</div>
+<div *ngIf="!grouped">
+  <ion-list>
+    <ion-searchbar (ionInput)="searchPlayers($event)"></ion-searchbar>
+    <button ion-item *ngFor="let player of playerList" (click)="openPlayerDetail(player)">
+      <!--<ion-icon [name]="item.icon" item-start></ion-icon>-->
+      {{player.personal.FirstName}}&nbsp;{{player.personal.LastName}}
+      <!--<div class="item-note" item-end>-->
+        <!--{{item.note}}-->
+      <!--</div>-->
+    </button>
+  </ion-list>
+</div>

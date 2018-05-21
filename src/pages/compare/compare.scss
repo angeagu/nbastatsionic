@@ -1,0 +1,24 @@
+.compareView {
+
+  ion-grid {
+    padding-top: 50px;
+  }
+
+  ion-select {
+    max-width: 100%;
+  }
+
+  .compareRowHeader {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .compareRowButton {
+    text-align: center;
+  }
+
+  .errorItem {
+    color: darkred;
+    font-size: 12px;
+  }
+}

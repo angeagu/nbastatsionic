@@ -1,0 +1,9 @@
+- Precarga de los datos de jugadores, teams, lo que mas se necesite en la app al principio, para no tardar tanto al cargar los datos
+en las vistas. De hecho, explorar la posibilidad de hacer la app 'Progresiva', con CacheAPI para los datos de URLs y almacenamiento
+en IndexedDB de ciertos datos.
+- En la vista de la lista de players, meterle un spinner porque tarda bastante en cargar.
+- PlayerDetail, las categorias no aparecen bien ordenadas.
+
+Wishes
+Career cumulative player stats
+Draft data
