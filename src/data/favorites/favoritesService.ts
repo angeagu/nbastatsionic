@@ -19,7 +19,7 @@ export class FavoritesService {
 
   }
 
-  getFavorites(): Favorite[] {
+  getFavorites(): Rx.Subject<Favorite> {
     return this.favorites.filter((favorite: Favorite) => {
       //Devolvemos todos los favoritos de momento.
       return favorite != null

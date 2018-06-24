@@ -9,6 +9,7 @@ import {Player} from '../../beans/player';
 export class PlayersView {
 
   private playerList: Player[];
+  isReady: boolean = false;
 
   constructor(private dataCenterService: DataCenterService) {
     this.createSortedPlayerMap();
@@ -16,9 +17,8 @@ export class PlayersView {
 
   createSortedPlayerMap() {
     this.dataCenterService.getActivePlayers().subscribe(data => {
-      // console.log ('datarrr')
-      // console.log (JSON.stringify(data))
       this.playerList = data;
+      this.isReady = true;
     });
   }
 

@@ -12,7 +12,7 @@ import {Team} from '../../beans/team';
 export class TeamsView {
 
   private teamList: string[];
-  private teams: Teams[];
+  private teams: Team[];
 
   constructor(public navCtrl: NavController, private dataCenterService: DataCenterService) {
     this.createTeamList();
@@ -23,12 +23,9 @@ export class TeamsView {
       //TODO todo esto tiene que ser una transformacion, otro stream.
       //OJO, que es chula esta, porque tiene un stream que 'llama' a otro.
       this.teamList = new Array<string>();
-      this.teams = new Array<string>();
+      this.teams = new Array<Team>();
       data.overallteamstandings.teamstandingsentry.forEach((teamentry) => {
-        var team: Team = new Team();
-        team.id = teamentry.team.ID;
-        team.name = teamentry.team.City + ' ' + teamentry.team.Name;
-        team.acronym = teamentry.team.Abbreviation;
+        var team: Team = new Team(teamentry.team.id,teamentry.team.City + ' ' + teamentry.team.Name,teamentry.team.Abbreviation);
         this.teams.push(team)
       })
       this.teams.sort((a: Team, b: Team) => {

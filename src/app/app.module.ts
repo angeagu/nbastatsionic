@@ -3,6 +3,8 @@ import {ErrorHandler, NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
+import {AgGridModule} from "ag-grid-angular/main";
+
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {ListPage} from '../pages/list/list';
@@ -21,6 +23,7 @@ import {GenericPlayerList} from '../components/genericPlayerList/genericPlayerLi
 import {SimpleList} from '../components/simpleList/simpleList';
 
 import {StatusBar} from '@ionic-native/status-bar';
+
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 @NgModule({
@@ -44,7 +47,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    AgGridModule.withComponents([])
   ],
   bootstrap: [IonicApp],
   entryComponents: [

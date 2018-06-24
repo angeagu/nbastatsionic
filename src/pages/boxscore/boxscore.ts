@@ -10,6 +10,8 @@ import {DataCenterService} from "../../data/dataCenterService";
 
 export class BoxscoreView {
   team: Team;
+  gameId: number;
+  gameList: Array<string>;
 
   constructor(private navParams: NavParams, private dataCenterService:DataCenterService) {
     this.gameId = this.navParams.get('gameId');

@@ -14,7 +14,7 @@ import {BoxscoreView} from "../boxscore/boxscore";
 export class GamesView {
 
   private games: Game[];
-  private gamesList: string[] = new Array<String>();
+  private gamesList: string[] = new Array<string>();
   private date: string = moment().format();
 
   constructor(public navCtrl: NavController, private dataCenterService: DataCenterService) {
@@ -22,8 +22,8 @@ export class GamesView {
   }
 
   getGames() {
-    this.games = new Array<Games>();
-    this.gamesList = new Array<String>();
+    this.games = new Array<Game>();
+    this.gamesList = new Array<string>();
     this.dataCenterService.getFullSchedule().subscribe((data) => {
       this.games = data.filter((game) => {
         //TODO remove subtract, by now we are faking year for getting games of last season

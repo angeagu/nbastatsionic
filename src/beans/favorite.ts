@@ -1,9 +1,11 @@
 export class Favorite {
+
+  static readonly PLAYER: 'PLAYER';
+  static readonly TEAM: 'TEAM';
+
   id:number;
   name: string;
   type: string;
-  readonly PLAYER: 'PLAYER';
-  readonly TEAM: 'TEAM';
 
   constructor(id: number, name: string, type: string) {
     this.id = id;

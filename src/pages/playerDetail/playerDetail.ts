@@ -3,6 +3,7 @@ import { NavParams } from 'ionic-angular';
 import {Favorite} from '../../beans/favorite';
 import {FavoritesService} from "../../data/favorites/favoritesService";
 import {DataCenterService} from "../../data/dataCenterService";
+import {Player} from "../../beans/player";
 
 @Component({
   templateUrl: 'playerDetail.html',
@@ -13,7 +14,7 @@ export class PlayerDetailView {
   index: number;
   player: Player;
   playerList: Array<Player>;
-  statsStab: string;
+  statsTab: string;
   private objectKeys = Object.keys;
 
   constructor(private navParams: NavParams, private favoritesService: FavoritesService,

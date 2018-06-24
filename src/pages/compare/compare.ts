@@ -48,10 +48,10 @@ export class CompareView {
       this.dataCenterService.getActivePlayers().then(playerData => {
         this.playerList = playerData;
         this.playerList1 = playerData.filter((player) => {
-          return player.team != null && player.team.ID == teamId;
+          return player.team != null && player.team.id == teamId;
         });
         this.playerList2 = playerData.filter((player) => {
-          return player.team != null && player.team.ID == teamId;
+          return player.team != null && player.team.id == teamId;
         });
         //As inputs aren't defined with [(ngModel)] we have to use patchValue
         this.compareForm.patchValue({
@@ -69,19 +69,19 @@ export class CompareView {
   handleSelectUpdates() {
     //Subscribing changes.
     this.team1.valueChanges.subscribe((value:string) => {
-      this.playerList1 = this.playerList.filter((player) => {
-        return player.team != null && player.team.ID == value;
+      this.playerList1 = this.playerList.filter((player: Player) => {
+        return player.team != null && player.team.id == parseInt(value);
       });
       this.compareForm.patchValue({
-        player1: this.playerList1[0].personal.ID,
+        player1: this.playerList1[0].personal.ID
       })
     })
     this.team2.valueChanges.subscribe((value:string) => {
-      this.playerList2 = this.playerList.filter((player) => {
-        return player.team != null && player.team.ID == value;
+      this.playerList2 = this.playerList.filter((player: Player) => {
+        return player.team != null && player.team.id == parseInt(value);
       });
       this.compareForm.patchValue({
-        player2: this.playerList2[0].personal.ID,
+        player2: this.playerList2[0].personal.ID
       })
     })
   }

@@ -12,7 +12,7 @@ import {PlayerDetailView} from "../playerDetail/playerDetail";
 
 export class LeadersDetailView {
 
-  private playerList: string[];
+  private playerList: object[];
   private filteredPlayerList: Player[];
   private category: string;
   private statsTab: string = 'season';
@@ -25,7 +25,7 @@ export class LeadersDetailView {
   createLeadersList() {
     var filterCategory = this.category.toLowerCase()
     var statsField = this.statsTab === 'season' ? 'stats' : 'playoffStats'
-    this.playerList = new Array<string>();
+    this.playerList = new Array<object>();
     this.dataCenterService.getActivePlayers().subscribe((players) => {
       this.filteredPlayerList = players.sort((a: Player, b: Player) => {
         //TODO speed up this sorting

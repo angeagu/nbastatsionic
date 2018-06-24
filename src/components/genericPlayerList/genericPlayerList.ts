@@ -15,7 +15,7 @@ export class GenericPlayerList implements OnChanges {
   public showImage: boolean;
   public grouped: boolean;
   public searchable: boolean;
-  private readonly initialPlayerList: Array<Player>;
+  private initialPlayerList: Array<Player>;
   private sortedPlayerMap: object = {};
   private objectKeys = Object.keys;
 
